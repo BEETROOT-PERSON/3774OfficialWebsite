@@ -617,6 +617,7 @@ hr {
   #shorlineCleanup2 {
     max-width: 300px;
     height: auto;
+    margin-right: 2px;
   }
 
   #nontechnical {
@@ -628,6 +629,7 @@ hr {
   .SpecialSectionTitles1 {
     align-items: center;
     text-align: center;
+    margin-right: 5%;
   }
 }
 
