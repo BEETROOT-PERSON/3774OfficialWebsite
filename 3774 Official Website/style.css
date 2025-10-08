@@ -1,0 +1,732 @@
+/*
+Color Palette
+- Text color: #011627
+- Background color: #F0F0F0
+- Header/footer/sectioned backgrounds: #04724d
+- Main highlights: #cfffb0
+- Secondary highlights: #ffcc5d
+*/
+
+/* ------------------ Reset & Base ------------------ */
+* {
+  box-sizing: border-box;
+  font-family: "Zilla Slab", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #F0F0F0;
+  color: #011627;
+}
+
+/* Wrapper for centered content */
+.wrapper-main {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #04724d;
+  padding: 0 20px 10px;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Titles/logo in header */
+.titles {
+  float: left;
+  margin-top: 30px;
+  color: #ffcc5d;
+  font-size: 45px;
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Navbar elements */
+.navbarElements {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbarElements li {
+  margin-right: 70px;
+}
+
+.navbarElements a {
+  text-decoration: none;
+  padding: 10px;
+  margin-top: 5px;
+  display: block;
+  color: #ffcc5d;
+  font-size: 25px;
+}
+
+.navbarElements a:hover {
+  text-decoration: underline;
+}
+
+/* Dropdown menu */
+.dropdownMenu {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdownMenu button {
+  background-color: #ffcc5d;
+  color: #242331;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdownMenu a {
+  display: block;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.dropdownMenu .dropdownMenuContent {
+  display: none;
+  position: absolute;
+  min-width: 100px;
+  box-shadow: 2px 2px 5px #2ba84a;
+}
+
+.dropdownMenu:hover .dropdownMenuContent {
+  display: block;
+}
+
+/* Hamburger menu (hidden by default) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  margin-right: 13px;
+  padding-top: 35px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #ffcc5d;
+  margin: 3px 0;
+}
+
+.mainpage {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  flex: 1;
+}
+
+/* Text */
+.text {
+  font-size: 19px;
+  margin-left: 20px;
+}
+
+.smallTitle {
+  text-align: center;
+}
+
+#lowerText {
+  float: left;
+  word-wrap: break-word; /* prevent overflow */
+  overflow-wrap: anywhere;
+}
+
+/* Section styling */
+section {
+  width: 90%;
+  color: #011627;
+  background-color: #f0f0f0;
+}
+
+/* Images */
+.images {
+  box-shadow: 2px 2px 5px #cfffb0;
+  max-width: 100%;
+  height: auto;
+}
+
+#img1 {
+  float: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 125px;
+  margin-top: 20px;
+}
+
+#img3 {
+  margin-left: 35vh;
+  margin-right: 0;
+  align-items: center;
+}
+
+.missionImages {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+}
+
+.game-video {
+  margin-left: 25vh;
+  margin-right: 25vh;
+}
+
+.missionTextLeft {
+  margin-left: 50%;
+}
+
+.missionTextRight {
+  margin-right: 50%;
+}
+
+.footer {
+  width: 100%;
+  padding: 15px;
+  background-color: #04724d;
+  color: #ffcc5d;
+  text-align: center;
+  margin-top: auto; /* keeps footer at bottom */
+}
+
+
+/* Tablet / smaller desktop */
+@media screen and (max-width: 1350px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar {
+    width: 100%;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .navbarElements li{
+    margin-right: 20px;
+  }
+
+  #img1 {
+    margin-top: 15px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 890px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .navbarElements {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #04724d;
+    z-index: 10;
+  }
+
+  .navbarElements.active {
+    display: flex;
+  }
+
+  .navbarElements li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbarElements a {
+    color: #ffcc5d;
+    text-align: center;
+  }
+
+  .navbarElements li:hover {
+    background-color: #045d3f;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 580px) {
+    .titles{
+        font-size: 35px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .titles{
+        font-size: 30px;
+    }
+}
+
+/*What We Do Styling*/
+.SectionTitles {
+    text-align: center;
+    font-size: 35px;
+    margin-top: 2%;
+}
+
+#topTitle{
+    font-size: 40px;
+    margin-top: -0.5%;
+  }
+
+.codingTitle {
+  text-align: center;
+  font-size: 25px;
+}
+
+hr {
+    border: none;
+    display: flex;
+    justify-content: center;
+    height: 2px;
+    background-color: #876009; 
+    width: 90%;
+    border-radius: 2px;
+}
+
+#hr2 {
+    border: none;
+    display: flex;
+    justify-content: center;
+    height: 2px;
+    background-color: #876009; 
+    width: 90%;
+    border-radius: 2px;
+}
+
+#container1 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 0;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#designProcess {
+    margin-right: 0%;
+    margin-left: 5%;
+    flex: 1;
+    font-size: 18px;
+}
+
+#Design1 {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border: #876009;
+    border-radius: 3px;
+    border: solid;
+    border-radius: 15px;
+    max-width: 450px;
+    height: auto;
+    overflow: hidden;
+    margin-left: 5%;
+    margin-right: 8%;
+    margin-top: 25px;
+}
+
+#container2 {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#technical {
+    flex: 1;
+    list-style-type: none;
+    margin: 0;
+    text-align: center;
+    font-size: 17.5px;
+}
+
+#buildShot1 {
+  display: flex;
+  border: #876009;
+  border-radius: 3px;
+  border: solid;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 350px;
+  height: auto;
+  margin-left: 2%;
+  margin-right: 4%;
+}
+
+#bumbleCoding {
+  display: flex;
+  border: #876009;
+  border-radius: 3px;
+  border: solid;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 350px;
+  height: auto;
+  margin-left: 7%;
+  margin-right: 2%;
+}
+
+#container3 {
+  display: flex;
+  align-items: left;
+  gap: 20px;
+  margin-bottom: 40px;
+  margin-right: 5%;
+}
+
+#nontechnical {
+  list-style-type: none;
+  max-width: 100%;
+  margin-top: 2.5%;
+}
+
+#nontechnical li {
+  margin-top: 2%;
+  margin-bottom: 0%;
+  font-size: larger;
+}
+
+#shorlineCleanup2 {
+  display: flex;
+  border: #876009;
+  border-radius: 3px;
+  border: solid;
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 400px;
+  height: auto;
+  margin-left: 7%;
+  margin-right: 1%;
+  max-width: 350px;
+  flex-shrink: 0;
+}
+
+.SpecialSectionTitles1 {
+  font-size: 40px;
+  margin-left: 7%;
+}
+
+#container4 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  float: left;
+  margin-bottom: 40px;
+}
+
+#outreach {
+  max-width: 60%;
+  list-style-type: none;
+  text-align: center;
+}
+
+.outreachTitles {
+  font-size: 25px;
+  text-align: center;
+}
+
+#vetsmuseum1{
+  display: flex;
+  border: #876009;
+  border-radius: 3px;
+  border: solid;
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 40%;
+  height: auto;
+  margin-left: 3%;
+  margin-right: 5%;
+  flex-shrink: 0;
+}
+
+#container5 {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#traditions {
+    flex: 1;
+    list-style-type: none;
+    margin: 0;
+    text-align: center;
+    font-size: 17.5px;
+}
+
+#projectHoneybee1 {
+  display: flex;
+  border: #876009;
+  border-radius: 3px;
+  border: solid;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 350px;
+  height: auto;
+  margin-left: 2%;
+  margin-right: 4%;
+}
+
+#honeybeeJewel {
+  display: flex;
+  border: #876009;
+  border-radius: 3px;
+  border: solid;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 350px;
+  height: auto;
+  margin-left: 7%;
+  margin-right: 2%;
+}
+
+#container5 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0px;
+}
+
+#honeybee {
+  text-align: center;
+  margin-bottom: 5%;
+  margin-top: 0%;
+  font-size: 25px;
+}
+
+#traditions {
+  list-style-type: none;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  #topTitle{
+    font-size: 30px;
+    margin-top: -0.5;
+  }
+
+  #container1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #designProcess {
+    order: 0;
+    margin-right: 10%;
+    margin-top: 0px;
+  }
+
+  #Design1 {
+    max-width: 350px;
+    height: auto;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  #container2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* two columns for images */
+        grid-template-rows: auto auto;         /* first row = text, second row = images */
+        grid-template-areas:
+            "technical technical"
+            "bumbleCoding buildShot1";
+        gap: 20px;
+        justify-items: center;
+        align-items: center;
+        width: 100%;
+        padding: 0 10px; /* add padding to prevent overflow */
+    }
+
+    #technical {
+        grid-area: technical;
+        width: 100%;
+        max-width: 1350px; /* optional: prevent too-wide text */
+        text-align: center;
+        margin-left: -10%;
+    }
+
+    #bumbleCoding,
+    #buildShot1 {
+        width: 100%;
+        max-width: 300px; /* shrink images to fit on small screens */
+        height: auto;
+        border-radius: 15px;
+        grid-area: auto;
+        justify-items: center;
+    }
+
+    #bumbleCoding {
+      margin: 0;
+    }
+
+    #buildShot1 {
+      margin: 0;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+  #container3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    overflow: hidden;
+  }
+
+  #shorlineCleanup2 {
+    max-width: 300px;
+    height: auto;
+  }
+
+  #nontechnical {
+    text-align: center;
+    align-items: center;
+    margin-right: 7%;
+  }
+
+  .SpecialSectionTitles1 {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #container4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  #outreach {
+    width: 100%;
+    max-width: 90%;
+    margin-bottom: 20px;
+    margin-right: 12%;
+  }
+
+  #vetsmuseum1 {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  #container5 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* two columns for images */
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "traditions traditions"
+      "projectHoneybee1 honeybeeJewel";
+    gap: 20px;                /* spacing between grid items */
+    justify-items: center;
+    align-items: start;       /* aligns text to the top */
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  /* Title styling */
+  #traditions {
+    grid-area: traditions;
+    width: 100%;
+    max-width: 1350px;
+    text-align: center;
+    margin: 20px 0;
+    margin-right: 40px;
+  }
+
+  #traditions .sectionTitles {
+    font-size: 1.5rem;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+
+  /* Text under titles */
+  #traditions p,
+  #traditions li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+
+  /* Images */
+  #projectHoneybee1,
+  #honeybeeJewel {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
+  }
+
+  #projectHoneybee1 {
+    grid-area: projectHoneybee1;
+    margin: 0;
+  }
+
+  #honeybeeJewel {
+    grid-area: honeybeeJewel;
+    margin: 0;
+  }
+
+  #honeybee {
+    margin-top: 0%;
+  }
+}
+
+/*Homepage Styling*/
+
+.homeSection {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#img2 {
+  float: left;
+  max-width: 400px;
+  margin: 0 20px 20px 20px;
+}
